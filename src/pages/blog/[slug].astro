@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={`${post.data.title} | BlogDeco`} description={post.data.description} image={post.data.featuredImage}>
+  <article class="mx-auto max-w-4xl">
+    <h1 class="mb-5 text-4xl font-bold">{post.data.title}</h1>
+    <img class="mb-6 h-96 w-full rounded-2xl object-cover" src={post.data.featuredImage} alt={post.data.title} />
+    <p class="mb-6 text-lg text-steel">{post.data.description}</p>
+
+    <div class="mb-8 grid gap-4 md:grid-cols-2">
+      <img class="h-64 w-full rounded-2xl object-cover" src={post.data.imageLeft} alt="Post detail image one" />
+      <img class="h-64 w-full rounded-2xl object-cover" src={post.data.imageRight} alt="Post detail image two" />
+    </div>
+
+    <div class="prose prose-slate mb-8 max-w-none">
+      <Content />
+    </div>
+
+    <aside class="card grid items-center gap-4 md:grid-cols-[140px_1fr_auto]">
+      <img class="h-32 w-full rounded-xl object-cover" src={post.data.amazonProduct.image} alt={post.data.amazonProduct.name} />
+      <div>
+        <h3 class="font-semibold">{post.data.amazonProduct.name}</h3>
+        <p class="text-sm text-steel">{post.data.amazonProduct.description}</p>
+      </div>
+      <a class="rounded-full bg-sky px-5 py-2 text-sm font-semibold text-white" href={post.data.amazonProduct.link} target="_blank" rel="noreferrer">Buy on Amazon</a>
+    </aside>
+  </article>
+</BaseLayout>

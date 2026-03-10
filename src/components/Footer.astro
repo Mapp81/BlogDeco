@@ -1,0 +1,40 @@
+---
+const categories = [
+  ['Kitchen', '/category/kitchen'],
+  ['Bathroom', '/category/bathroom'],
+  ['Bedroom', '/category/bedroom'],
+  ['Decluttering', '/category/decluttering'],
+  ['Living & Dining', '/category/living-dining-room'],
+  ['Gardening', '/category/gardening']
+];
+---
+
+<footer class="mt-16 bg-slate py-10 text-slate-100">
+  <div class="container-shell grid gap-8 md:grid-cols-3">
+    <div>
+      <h3 class="mb-3 font-semibold">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/about-me">About Me</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/faqs">FAQs</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-and-conditions">Terms</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="mb-3 font-semibold">Categories</h3>
+      <ul class="space-y-2 text-sm">
+        {categories.map(([name, href]) => <li><a href={href}>{name}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h3 class="mb-3 font-semibold">Follow</h3>
+      <div class="mb-3 flex gap-4">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://pinterest.com" target="_blank" rel="noreferrer">Pinterest</a>
+      </div>
+      <p class="text-sm text-slate-300">© {new Date().getFullYear()} BlogDeco. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

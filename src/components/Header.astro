@@ -1,0 +1,22 @@
+---
+const nav = [
+  { href: '/blog', label: 'Blog' },
+  { href: '/about-me', label: 'About Me' },
+  { href: '/contact', label: 'Contact' }
+];
+---
+
+<header class="border-b border-slate-200 bg-white">
+  <div class="container-shell flex items-center justify-between gap-4 py-4">
+    <a class="text-xl font-bold text-slate" href="/">BlogDeco</a>
+    <nav class="hidden gap-6 md:flex">
+      {nav.map((item) => (
+        <a class="text-sm font-medium text-steel transition hover:text-sky" href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+    <div class="flex items-center gap-3 text-steel">
+      <a aria-label="Instagram" href="https://instagram.com" target="_blank" rel="noreferrer">◎</a>
+      <a aria-label="Pinterest" href="https://pinterest.com" target="_blank" rel="noreferrer">◉</a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const categoryMap = {
+  kitchen: 'Kitchen',
+  bathroom: 'Bathroom',
+  bedroom: 'Bedroom',
+  decluttering: 'Decluttering',
+  'living-dining-room': 'Living & Dining',
+  gardening: 'Gardening'
+};
+
+export async function getStaticPaths() {
+  return Object.keys(categoryMap).map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const posts = (await getCollection('posts')).filter((post) => post.data.category === slug);
+const name = categoryMap[slug as keyof typeof categoryMap] ?? 'Category';
+---
+
+<BaseLayout title={`${name} Ideas | BlogDeco`} description={`Explore ${name} ideas for interior decoration.`}>
+  <h1 class="mb-8 text-3xl font-bold">{name}</h1>
+  {posts.length ? (
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => <PostCard href={`/blog/${post.slug}`} title={post.data.title} image={post.data.featuredImage} description={post.data.description} />)}
+    </div>
+  ) : (
+    <p>No posts available yet in this category.</p>
+  )}
+</BaseLayout>
