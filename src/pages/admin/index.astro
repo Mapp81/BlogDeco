@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import fs from 'node:fs/promises';
+
+async function readJson(path: string) {
+  try {
+    const data = await fs.readFile(path, 'utf-8');
+    return JSON.parse(data);
+  } catch {
+    return [];
+  }
+}
+
+const messages = await readJson('src/data/messages.json');
+const newsletter = await readJson('src/data/newsletter.json');
+---
+
+<BaseLayout title="Admin | BlogDeco" description="Admin data for contact and newsletter entries.">
+  <h1 class="mb-8 text-3xl font-bold">Admin Dashboard</h1>
+  <div class="grid gap-8 lg:grid-cols-2">
+    <section>
+      <h2 class="mb-4 text-xl font-semibold">Contact Messages</h2>
+      <div class="space-y-3">
+        {messages.length ? messages.map((item: any) => (
+          <article class="card">
+            <p class="font-semibold">{item.name} ({item.email})</p>
+            <p class="text-sm text-steel">{item.message}</p>
+          </article>
+        )) : <p>No messages yet.</p>}
+      </div>
+    </section>
+    <section>
+      <h2 class="mb-4 text-xl font-semibold">Newsletter Subscribers</h2>
+      <div class="space-y-3">
+        {newsletter.length ? newsletter.map((item: any) => (
+          <article class="card">
+            <p class="font-semibold">{item.name}</p>
+            <p class="text-sm text-steel">{item.email}</p>
+          </article>
+        )) : <p>No subscribers yet.</p>}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

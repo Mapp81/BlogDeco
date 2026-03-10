@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+const latestPosts = posts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()).slice(0, 3);
+
+const categories = [
+  { slug: 'kitchen', name: 'Kitchen', desc: 'Space-saving layouts and practical storage systems.', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80' },
+  { slug: 'bathroom', name: 'Bathroom', desc: 'Turn your bathroom into a spa-inspired retreat.', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80' },
+  { slug: 'bedroom', name: 'Bedroom', desc: 'Build restful bedrooms with warm, cozy accents.', image: 'https://images.unsplash.com/photo-1616593969747-4797dc75033e?auto=format&fit=crop&w=800&q=80' },
+  { slug: 'decluttering', name: 'Decluttering', desc: 'Step-by-step routines for tidy and calm interiors.', image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=800&q=80' },
+  { slug: 'living-dining-room', name: 'Living & Dining', desc: 'Design social spaces that are stylish and functional.', image: 'https://images.unsplash.com/photo-1615529162924-f860538846e8?auto=format&fit=crop&w=800&q=80' },
+  { slug: 'gardening', name: 'Gardening', desc: 'Bring nature inside and outside with easy greenery.', image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80' }
+];
+---
+
+<BaseLayout title="BlogDeco | Interior Decoration Ideas" description="Practical interior decoration ideas and curated product recommendations.">
+  <section class="mb-14 grid items-center gap-10 lg:grid-cols-2">
+    <div>
+      <h1 class="mb-4 text-4xl font-bold leading-tight">Organize your home with style and functionality.</h1>
+      <h3 class="mb-6 text-lg text-steel">Discover practical ideas and shop our recommended products with just one click.</h3>
+      <a href="/blog" class="inline-flex items-center gap-2 rounded-full bg-sky px-6 py-3 font-semibold text-white shadow">🛒 Shop Now</a>
+    </div>
+    <img class="h-full min-h-80 w-full rounded-3xl object-cover shadow" src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1400&q=80" alt="Modern interior decor" />
+  </section>
+
+  <section class="mb-14">
+    <h2 class="mb-6 text-2xl font-semibold">Home Style Ideas</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      {latestPosts.map((post) => <PostCard href={`/blog/${post.slug}`} title={post.data.title} image={post.data.featuredImage} description={post.data.description} />)}
+    </div>
+  </section>
+
+  <section class="mb-14">
+    <h2 class="mb-6 text-2xl font-semibold">Click to discover more about each category</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {categories.map((category) => (
+        <article class="card">
+          <img class="mb-4 h-44 w-full rounded-xl object-cover" src={category.image} alt={category.name} loading="lazy" />
+          <h3 class="mb-2 text-lg font-semibold">{category.name}</h3>
+          <p class="mb-3 text-sm text-steel">{category.desc}</p>
+          <a href={`/category/${category.slug}`} class="text-sm font-semibold text-sky">Explore category</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-14 rounded-3xl bg-mint p-8">
+    <h2 class="mb-4 text-2xl font-semibold">Get weekly ideas delivered to your inbox</h2>
+    <form class="grid gap-3 md:grid-cols-3" method="POST" action="/api/newsletter">
+      <input class="rounded-xl border border-slate-300 px-4 py-3" type="text" name="name" placeholder="Name" required />
+      <input class="rounded-xl border border-slate-300 px-4 py-3" type="email" name="email" placeholder="Email" required />
+      <button class="rounded-xl bg-slate px-4 py-3 font-semibold text-white" type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <section class="grid items-center gap-8 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200 lg:grid-cols-2">
+    <img class="h-80 w-full rounded-2xl object-cover" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=80" alt="Book recommendation" />
+    <div>
+      <h2 class="mb-3 text-2xl font-semibold">Good Reads</h2>
+      <p class="mb-5 text-steel">"The Interior Design Handbook" is full of practical room-by-room tips to blend textures, color, and functionality beautifully.</p>
+      <a class="inline-block rounded-full bg-sky px-6 py-3 font-semibold text-white" href="https://www.amazon.com/" target="_blank" rel="noreferrer">View on Amazon</a>
+    </div>
+  </section>
+</BaseLayout>

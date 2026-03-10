@@ -1,0 +1,17 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  image: string;
+  description: string;
+}
+
+const { href, title, image, description } = Astro.props;
+---
+
+<article class="card flex h-full flex-col">
+  <img class="mb-4 h-48 w-full rounded-xl object-cover" src={image} alt={title} loading="lazy" />
+  <h3 class="mb-2 text-lg font-semibold">{title}</h3>
+  <p class="mb-4 text-sm text-steel" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">{description}</p>
+  <a href={href} class="mt-auto text-sm font-semibold text-sky">Learn more</a>
+</article>
