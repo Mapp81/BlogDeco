@@ -1,7 +1,9 @@
 ---
 title: "Bedroom Serenity Plan: Cozy and Clutter-Free"
 description: "Set up a bedroom that supports better sleep with calming colors and low-stress storage solutions."
+intro: "blablabla"
 category: "bedroom"
+author: "Anita"
 date: "2026-01-29"
 featuredImage: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
 imageLeft: "https://images.unsplash.com/photo-1616594039964-4d8f9f4d45fe?auto=format&fit=crop&w=900&q=80"

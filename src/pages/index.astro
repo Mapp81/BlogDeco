@@ -29,7 +29,7 @@ const categories = [
   <section class="mb-14">
     <h2 class="mb-6 text-2xl font-semibold">Home Style Ideas</h2>
     <div class="grid gap-6 md:grid-cols-3">
-      {latestPosts.map((post) => <PostCard href={`/blog/${post.slug}`} title={post.data.title} image={post.data.featuredImage} description={post.data.description} />)}
+      {latestPosts.map((post) => <PostCard href={`/blog/${post.slug}`} title={post.data.title} author={post.data.author} date={post.data.date} image={post.data.featuredImage} description={post.data.intro} />)}
     </div>
   </section>
 

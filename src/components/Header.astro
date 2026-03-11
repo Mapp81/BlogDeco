@@ -4,6 +4,10 @@ const nav = [
   { href: '/about-me', label: 'About Me' },
   { href: '/contact', label: 'Contact' }
 ];
+
+import Image from "astro/components/Image.astro";
+import IG from "src/images/IG.svg";
+import pinterest from "src/images/pinterest.svg";
 ---
 
 <header class="border-b border-slate-200 bg-white">
@@ -15,8 +19,8 @@ const nav = [
       ))}
     </nav>
     <div class="flex items-center gap-3 text-steel">
-      <a aria-label="Instagram" href="https://instagram.com" target="_blank" rel="noreferrer">◎</a>
-      <a aria-label="Pinterest" href="https://pinterest.com" target="_blank" rel="noreferrer">◉</a>
+      <a aria-label="Instagram" href="https://instagram.com" target="_blank" rel="noreferrer"><Image src={IG} alt="logo instagram" class="w-6"/></a>
+      <a aria-label="Pinterest" href="https://pinterest.com" target="_blank" rel="noreferrer"><Image src={pinterest} alt="logo pinterest" class="w-6"/></a>
     </div>
   </div>
 </header>

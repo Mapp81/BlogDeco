@@ -4,6 +4,8 @@ const posts = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    author: z.string(),
+    intro: z.string(),
     description: z.string(),
     category: z.enum(['kitchen', 'bathroom', 'bedroom', 'decluttering', 'living-dining-room', 'gardening']),
     date: z.string(),

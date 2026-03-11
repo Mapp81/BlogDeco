@@ -1,7 +1,9 @@
 ---
 title: "Smart Kitchen Storage Hacks for Small Spaces"
 description: "Transform tiny kitchens with vertical storage, drawer zoning, and multifunctional accessories."
+intro: "blablabla"
 category: "kitchen"
+author: "Anita"
 date: "2026-02-16"
 featuredImage: "https://images.unsplash.com/photo-1556911220-bda9f7f7597e?auto=format&fit=crop&w=1200&q=80"
 imageLeft: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"
