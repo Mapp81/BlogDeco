@@ -1,10 +1,44 @@
 ---
+import { Image } from 'astro:assets';
+
 import BaseLayout from '../layouts/BaseLayout.astro';
+import cutedogsbeach from "../images/cute-dogs-beach.jpg";
+
 ---
 <BaseLayout title="About Me | BlogDeco" description="Meet the editor behind BlogDeco.">
-  <section class="mx-auto max-w-3xl space-y-4">
+  <section class="mx-auto max-w-3xl space-y-4 flex justify-center flex-col items-center">
     <h1 class="text-3xl font-bold">About Me</h1>
-    <p>Hi! I'm the creator of BlogDeco, where I share practical decoration ideas to make every room look better and work better.</p>
-    <p>My goal is to help you create spaces that feel calm, organized, and beautiful with realistic budgets.</p>
+  <div class="md:w-1/2 mb-14 md:mb-0">
+  <Image 
+    class="object-cover object-center rounded-full w-96 h-96 mb-8 mt-8" 
+    alt="Cute dogs with their mommy" 
+    src={cutedogsbeach}
+  >
+    </div>
+    <p>
+Hi! I’m <strong>Anni</strong>, I’m <strong>44 years old</strong>, and throughout my life I’ve taken different paths that have shaped me and brought me to where I am today. For many years, I worked as a <strong>dental prosthetist</strong>—a profession that taught me the importance of <strong>attention to detail</strong>, <strong>patience</strong>, and <strong>dedicated work</strong>.
+</p>
+
+<p>
+Today, my life moves at a different pace. At this stage, I deeply enjoy dedicating my time to my <strong>family</strong> and our <strong>home</strong>, helping to create spaces that feel <em>alive</em>, <em>functional</em>, and <em>full of love</em>.
+</p>
+
+<p>
+I’m married, and together we raise our <strong>two teenage daughters</strong>, who fill our home with energy, challenges, and lots of learning. We also share our lives with <strong>two dogs</strong>: <strong>Canela</strong>, sweet and calm, and <strong>Lemmy</strong>, the lively spirit of the family.
+</p>
+
+<p>
+One of my great passions is <strong>gardening</strong>. There’s nothing more relaxing than getting my hands dirty with soil, caring for plants, watching them grow, and transforming little corners into <em>green paradises</em>.
+</p>
+
+<p>
+I also love <strong>interior decorating</strong>—I enjoy creating <strong>cozy</strong>, <strong>harmonious spaces</strong> where every detail contributes to making the home a <em>true refuge of well-being</em>.
+</p>
+
+<p>
+My <strong>home decor blog</strong> was born with the intention to <strong>inspire</strong> those who visit, sharing <strong>ideas</strong>, <strong>tips</strong>, and <strong>carefully selected products</strong>. Every item I recommend is thoughtfully chosen to add <strong>value</strong>, <strong>beauty</strong>, and <strong>functionality</strong> to your life and home.
+</p>
+
+    
   </section>
 </BaseLayout>

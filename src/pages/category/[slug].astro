@@ -13,7 +13,15 @@ const categoryMap = {
 };
 
 export async function getStaticPaths() {
-  return Object.keys(categoryMap).map((slug) => ({ params: { slug } }));
+  const map = {
+    kitchen: 'Kitchen',
+    bathroom: 'Bathroom',
+    bedroom: 'Bedroom',
+    decluttering: 'Decluttering',
+    'living-dining-room': 'Living & Dining',
+    gardening: 'Gardening'
+  };
+  return Object.keys(map).map((slug) => ({ params: { slug } }));
 }
 
 const { slug } = Astro.params;

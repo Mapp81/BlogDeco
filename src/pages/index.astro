@@ -2,17 +2,21 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+import kitchenOrganizationHome from "../images/kitchen-organization-home.jpg";
+import shopping from "../images/shopping.svg";
 
 const posts = await getCollection('posts');
 const latestPosts = posts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()).slice(0, 3);
 
 const categories = [
-  { slug: 'kitchen', name: 'Kitchen', desc: 'Space-saving layouts and practical storage systems.', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80' },
-  { slug: 'bathroom', name: 'Bathroom', desc: 'Turn your bathroom into a spa-inspired retreat.', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80' },
-  { slug: 'bedroom', name: 'Bedroom', desc: 'Build restful bedrooms with warm, cozy accents.', image: 'https://images.unsplash.com/photo-1616593969747-4797dc75033e?auto=format&fit=crop&w=800&q=80' },
-  { slug: 'decluttering', name: 'Decluttering', desc: 'Step-by-step routines for tidy and calm interiors.', image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=800&q=80' },
-  { slug: 'living-dining-room', name: 'Living & Dining', desc: 'Design social spaces that are stylish and functional.', image: 'https://images.unsplash.com/photo-1615529162924-f860538846e8?auto=format&fit=crop&w=800&q=80' },
-  { slug: 'gardening', name: 'Gardening', desc: 'Bring nature inside and outside with easy greenery.', image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80' }
+  { slug: 'kitchen', name: 'Kitchen', desc: 'Space-saving layouts and practical storage systems.', image: '/src/images/kitchen.jpg' },
+  { slug: 'bathroom', name: 'Bathroom', desc: 'Turn your bathroom into a spa-inspired retreat.', image: '/src/images/bathroom-modern.jpg' },
+  { slug: 'bedroom', name: 'Bedroom', desc: 'Build restful bedrooms with warm, cozy accents.', image: '/src/images/bedroom-modern-cozy.jpg' },
+  { slug: 'decluttering', name: 'Decluttering', desc: 'Step-by-step routines for tidy and calm interiors.', image: '/src/images/pantry.jpg' },
+  { slug: 'living-dining-room', name: 'Living & Dining', desc: 'Design social spaces that are stylish and functional.', image: '/src/images/living.jpg' },
+  { slug: 'gardening', name: 'Gardening', desc: 'Bring nature inside and outside with easy greenery.', image: '/src/images/garden.jpg' }
 ];
 ---
 
@@ -20,16 +24,16 @@ const categories = [
   <section class="mb-14 grid items-center gap-10 lg:grid-cols-2">
     <div>
       <h1 class="mb-4 text-4xl font-bold leading-tight">Organize your home with style and functionality.</h1>
-      <h3 class="mb-6 text-lg text-steel">Discover practical ideas and shop our recommended products with just one click.</h3>
-      <a href="/blog" class="inline-flex items-center gap-2 rounded-full bg-sky px-6 py-3 font-semibold text-white shadow">🛒 Shop Now</a>
+      <h3 class="mb-6 text-sm text-steel">Discover practical ideas and shop our recommended products with just one click.</h3>
+      <a href="/blog" class="inline-flex items-center gap-2 rounded-full bg-sky px-12 py-3 font-semibold text-white shadow">Shop now <Image src={shopping} alt="shop icon"> </a>
     </div>
-    <img class="h-full min-h-80 w-full rounded-3xl object-cover shadow" src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1400&q=80" alt="Modern interior decor" />
+    <Image class="h-full min-h-80 w-full rounded-3xl object-cover shadow" src={kitchenOrganizationHome} alt="Modern interior decor" />
   </section>
 
   <section class="mb-14">
     <h2 class="mb-6 text-2xl font-semibold">Home Style Ideas</h2>
     <div class="grid gap-6 md:grid-cols-3">
-      {latestPosts.map((post) => <PostCard href={`/blog/${post.slug}`} title={post.data.title} author={post.data.author} date={post.data.date} image={post.data.featuredImage} description={post.data.intro} />)}
+      {latestPosts.map((post) => <PostCard href={`/blog/${post.slug}`} title={post.data.title} author={post.data.author} date={post.data.date} image={post.data.featuredImage} description={post.data.description} />)}
     </div>
   </section>
 

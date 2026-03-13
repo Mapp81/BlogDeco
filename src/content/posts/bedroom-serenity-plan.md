@@ -1,19 +1,23 @@
 ---
-title: "Bedroom Serenity Plan: Cozy and Clutter-Free"
-description: "Set up a bedroom that supports better sleep with calming colors and low-stress storage solutions."
-intro: "blablabla"
+title: "Elegant Storage Solutions for bedrooms"
+description: "The perfect blend of function and elegance."
 category: "bedroom"
 author: "Anita"
 date: "2026-01-29"
-featuredImage: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
-imageLeft: "https://images.unsplash.com/photo-1616594039964-4d8f9f4d45fe?auto=format&fit=crop&w=900&q=80"
-imageRight: "https://images.unsplash.com/photo-1617325247661-675ab4b64d91?auto=format&fit=crop&w=900&q=80"
-amazonProduct:
-  name: "Underbed Storage Bags (Set of 4)"
-  image: "https://images.unsplash.com/photo-1631048500393-58f4b4ca4f9d?auto=format&fit=crop&w=600&q=80"
-  description: "Store off-season linens and clothes while keeping your room airy and organized."
-  link: "https://www.amazon.com/"
+featuredImage: "/src/images/bedroom-storage-1.jpg"
+imageLeft: "/src/images/bedroom-storage-2.jpg"
+imageRight: "/src/images/bedroom-storage-3.jpg"
+amazonProduct1:
+  name: "Basics Cloth Cube Storage"
+  description: ""
+  link: "https://amzn.to/4556Nz3"
+amazonProduct2:
+  name: "Fabric Storage Boxes with Lids"
+  description: ""
+  link: "https://amzn.to/3UFDyOg"
+amazonProduct3:
+  name: "Sock Drawer Organizer 3 Pack"
+  description: ""
+  link: "https://amzn.to/413OPMj"      
 ---
-Build your bedroom around comfort first. Choose two to three core tones and repeat them in bedding, rugs, and curtains.
-
-Keep nighttime essentials in one drawer to maintain a clear bedside surface and a calmer mind.
+Transform Your Space with Our Stylish Storage Boxes! Designed to blend elegance and functionality, these modern organizers are perfect for decluttering your home. Made from durable, high-quality materials, each box includes customizable labels for quick and easy access to your belongings. Whether for closets, shelves, or minimalist decor, they help you make the most of every corner with style. Available in various sizes and colors, they're the perfect solution for a neat, organized space. Order now and enjoy the beauty of well-organized living!

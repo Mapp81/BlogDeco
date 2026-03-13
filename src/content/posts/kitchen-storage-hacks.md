@@ -1,19 +1,26 @@
 ---
-title: "Smart Kitchen Storage Hacks for Small Spaces"
-description: "Transform tiny kitchens with vertical storage, drawer zoning, and multifunctional accessories."
-intro: "blablabla"
+title: "Organize Your Kitchen with containers"
+description: "Transform chaos into calm with these simple kitchen container solutions."
 category: "kitchen"
 author: "Anita"
 date: "2026-02-16"
-featuredImage: "https://images.unsplash.com/photo-1556911220-bda9f7f7597e?auto=format&fit=crop&w=1200&q=80"
-imageLeft: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"
-imageRight: "https://images.unsplash.com/photo-1565538420870-da08ff96a207?auto=format&fit=crop&w=900&q=80"
-amazonProduct:
-  name: "Expandable Bamboo Drawer Organizer"
-  image: "https://images.unsplash.com/photo-1506368083636-6defb67639a7?auto=format&fit=crop&w=600&q=80"
-  description: "Keep cutlery, tools, and gadgets separated with an adjustable organizer that fits most drawers."
-  link: "https://www.amazon.com/"
+featuredImage: "/src/images/kitchen-organization-1.jpg"
+imageLeft: "/src/images/kitchen-organization-containers-1.jpg"
+imageRight: "/src/images/kitchen-organization-containers-2.jpg"
+amazonProduct1:
+  
+  name: "Glass Food Storage Jars 6 Pack"
+  description: ""
+  link: "https://amzn.to/40IfWMC"
+amazonProduct2:
+  
+  name: "Spice Jars with Label 12 Pack"
+  description: ""
+  link: "https://amzn.to/3IHrI3A"
+amazonProduct3:
+  
+  name: "Storage plastic Container 24 pcs"
+  description: ""
+  link: "https://amzn.to/40BWNMo"    
 ---
-A functional kitchen starts with clear zones. Keep prep tools near the cutting area, everyday cookware close to the stove, and cleaning supplies near the sink.
-
-Use wall rails, under-shelf baskets, and stackable containers to maximize every inch without making the room feel crowded.
+Transform your kitchen with these glass storage jars, perfect for storing food such as nuts, pasta, and spices with style and functionality. Designed with airtight lids and clear labels, they ensure freshness and order in your home, ideal for lovers of tidiness and sustainability. Check out the purchase links below and discover how they save space while enhancing your decor. Easy to clean and eco-friendly, they are the ultimate solution for an efficient kitchen. Buy these practical storage jars now and elevate your culinary experience!
